@@ -207,7 +207,7 @@ namespace Project1ScopeIndia.Controllers
             email.Body = new TextPart(MimeKit.Text.TextFormat.Plain)
             {
                 Text = $":Your otp is: {OTP}"
-            };
+            };sdf
             using (var smtp = new SmtpClient())
             {
                 smtp.Connect("smtp.gmail.com", 587, MailKit.Security.SecureSocketOptions.StartTls);
