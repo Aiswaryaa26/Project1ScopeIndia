@@ -1,0 +1,48 @@
+﻿@model Project1ScopeIndia.Models.LoginModel
+
+<div class="text-center">
+    <div class="container bg-dark text-light p-4 rounded mx-auto" style="max-width: 400px;">
+        <h3 class="mb-3 text-center">Login</h3>
+
+        <form asp-controller="Home" asp-action="Registration" method="post">
+            <div class="mb-3">
+                <label asp-for="UserEmailAddress" class="form-label">Email Address</label>
+                <input asp-for="UserEmailAddress" class="form-control bg-light text-dark" />
+                <span asp-validation-for="UserEmailAddress" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="UserPassword" class="form-label">Password</label>
+                <input asp-for="UserPassword" type="password" class="form-control bg-light text-dark" />
+                <span asp-validation-for="UserPassword" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3 form-check d-flex align-items-center">
+                <input asp-for="UserRememberMe" class="form-check-input me-2" type="checkbox" id="rememberMe" />
+                <label for="rememberMe" class="form-check-label">Remember Me</label>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+
+            <div class="login-links">
+                <a href="/WebHome/FirstTimeLogin">FIrst Time User?Log in?</a>
+                <a href="/WebHome/ForgotPassword">Forgot Password</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="login-container">
+
+    @if (TempData["Message"] != null)
+    {
+         <div class="alert alert-success text-center" style="margin-bottom: 10px;">
+            @TempData["Message"]
+        </div>
+    }
+<div/>
+
+@section Scripts {
+    @await Html.PartialAsync("/Views/Shared/_ValidationScriptsPartial.cshtml")
+}

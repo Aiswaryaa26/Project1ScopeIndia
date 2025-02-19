@@ -1,0 +1,238 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+    color:white;
+    margin-bottom: 60px;
+    background-image: url('/images/bg.jpg');
+    background-size:cover;
+    background-position:center;
+}
+
+
+/*navbar*/
+.navbar {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    padding:0 20px;
+}
+
+.navbar-logo {
+  display:fles;
+  justify-content:center;
+  align-items:center;   
+  flex-grow:1;
+}
+ 
+/*home menu items*/
+.navbar-collapse {
+    display: flex;
+    justify-content: flex-end; 
+    width:100%;
+}
+
+.navbar-nav {
+    display:flex;
+    margin:0;
+    padding:0;
+    list-style:none;
+    
+}
+.nav-item{
+    margin:0 10px;
+}
+
+.nav-link{
+    text-decoration:none;
+    font-size:1rem
+    color:blue;
+    padding:5px 10px;
+    border-radius:5px;
+}
+
+.nav-link:hover {
+     background-color:royalblue;
+     color:white;
+     border-radius: 5px;
+}
+
+/*HOME*/
+.container-home {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: center; 
+    text-align: center; 
+    height: 100vh; 
+    box-sizing: border-box;
+}
+
+.container-home h1, .container-home p{
+    margin:0;
+}
+
+.image-container {
+    width: 100%; 
+    display: flex;
+    justify-content: center; 
+    flex-grow:0.5;
+    align-items:center;
+    margin-top: 40px; 
+}
+
+img {
+    max-width: 100%; 
+    height: auto; 
+}
+
+
+/*ABOUT*/
+.container-about{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    text-align:center;
+    padding:30px;
+    margin-top:20px;
+}
+.container-about h1{
+    font-size:36px;
+    font-weight:bold;
+    margin-bottom:20px;
+    color:burlywood;
+}
+.container-about h2{
+    font-size:28px;
+    font-weight:semi-bold;
+    margin-bottom:15px;
+    color:navajowhite;
+}
+.container-about h3{
+    font-size:22px;
+    font-weight:normal;
+    margin-bottom:20px;
+    color:white;
+}
+.container-about p{
+    font-size:18px;
+    font-family:'Arial',sans-serif;
+    color:white;
+    line-height:1.8;
+    margin:20px auto;
+    max-width:900px;
+    text-align:justify;
+    padding:0 15px;
+}
+
+/*Register form*/
+.checkbox-group {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.checkbox-group label {
+    margin-right: 10px;
+    font-weight: 500;
+    color: #333;
+    font-size: 14px;
+}
+
+.hobbies-container {
+    background-color: #fff;
+    border:1px solid black;
+    border-radius: 5px;
+    padding: 15px;
+    color: black;
+    margin-top: 10px;
+}
+
+form {
+    padding: 20px;
+}
+
+fieldset {
+    border: none;
+    padding: 10px;
+}
+
+legend {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*Login*/
+.alert-success {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #d4edda;
+    color: #155724;
+    font-weight: bold;
+}
+
+.login-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+.login-links {
+    margin-top: 15px;
+}
+
+.login-links a
+{
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-links a:hover 
+{
+    text-decoration: underline;
+}
+/*Registration*/
+.alert-success {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #d4edda;
+    color: #155724;
+    font-weight: bold;
+    text-align: center;
+}
+
+.registration-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+/*COURSES*/
+.table tbody tr td {
+    color: white;
+    font-weight: bold;
+}

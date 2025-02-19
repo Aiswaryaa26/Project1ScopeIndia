@@ -1,0 +1,38 @@
+﻿<h1>Course Details</h1>
+@model IEnumerable<Project1ScopeIndia.Models.CourseModel>
+
+@if (Model != null && Model.Any())
+
+{
+    <div class="container mt-5">
+    
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>Course Id</th>
+                    <th>Course Name</th>
+                    <th>Duration of Course Name</th>
+                    <th>Amount of Course</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var i in Model)
+
+                {
+                    <tr>
+                        <td>@i.CourseId</td>
+                        <td>@i.CourseName</td>
+                        <td>@i.CourseDuration</td>
+                        <td>@i.CourseAmount</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 class="text-center text-danger">No Course details available</h3>
+}
+

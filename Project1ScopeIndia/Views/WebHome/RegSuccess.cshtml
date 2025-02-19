@@ -1,0 +1,60 @@
+﻿<h1>Registration successfull</h1>
+@model IEnumerable<Project1ScopeIndia.Models.RegistrationModel>
+
+<h1 class="text-center">Thank you for registering with us!!</h1>
+@if (Model != null && Model.Any())
+
+{
+    <div class="container mt-5">
+        <h2 class="text-center">Submitted Details</h2>
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Gender</th>
+                    <th>Date Of Birth</th>
+                    <th>Email Address</th>
+                    <th>Phone Number</th>
+                    <th> Country</th>
+                    <th> State</th>
+                    <th> City</th>
+                    <th> Hobbies</th>
+                    <th> Uploaded Avatar</th>
+                   
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var i in Model)
+
+                {
+                    var imagepath = "/uploads/" + i.RegAvatarPath;
+                    <tr>
+                        <td>@i.Id</td>
+                        <td>@i.RegFirstName</td>
+                        <td>@i.RegLastName</td>
+                        <td>@i.RegGender</td>
+                        <td>@i.RegDateOfBirth</td>
+                        <td>@i.RegEmailAddress</td>
+                        <td>@i.RegPhoneNumber</td>
+                        <td>@i.RegCountry</td>
+                        <td>@i.RegState</td>
+                        <td>@i.RegCity</td>
+                        <td>@i.RegHobbies</td>
+                        <td>@i.RegAvatarPath<img src="@imagepath" />
+                            @imagepath</td>
+
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 class="text-center text-danger">No registration data available</h3>
+}

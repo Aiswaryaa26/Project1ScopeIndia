@@ -1,0 +1,139 @@
+﻿@model Project1ScopeIndia.Models.RegistrationModel
+
+<div class="text-center">
+    <div class="container bg-body h-50 w-50 mx-auto rounded-start" style="background-color:white;">
+        <form asp-controller="WebHome" asp-action="Registration" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend>
+                    <span style="font-weight:bold; color:ghostwhite;">Registration</span>
+                </legend>
+
+                <div class="form-floating bg-dark col-7 mx-auto">
+                    <input asp-for="RegFirstName" class="form-control col-7 text-black" id="RegFirstName" />
+                    <label asp-for="RegFirstName" class="form-label text-black-50">First Name</label>
+                    <span asp-validation-for="RegFirstName" class="text-danger"></span>
+                </div>
+                <br />
+
+                <div class="form-floating bg-dark col-7 mx-auto">
+                    <input asp-for="RegLastName" class="form-control col-7 text-dark" id="RegLastName" />
+                    <label asp-for="RegLastName" class="form-label text-black-50">Last Name</label>
+                    <span asp-validation-for="RegLastName" class="text-danger"></span>
+                </div>
+                <br />
+
+                <div class="form-floating bg-dark col-7 mx-auto">
+                    <select asp-for="RegGender" class="form-control col-7" id="RegGender">
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Others">Others</option>
+                    </select>
+                    <label asp-for="RegGender" class="form-label text-dark">Gender</label>
+                    <span asp-validation-for="RegGender" class="text-danger"></span>
+                </div>
+                <br />
+
+                <div class="form-floating bg-dark col-7 mx-auto">
+                    <input asp-for="RegDateOfBirth" type="date" class="form-control col-7" id="RegDateOfBirth" />
+                    <label asp-for="RegDateOfBirth" class="form-label text-dark">Date Of Birth</label>
+                    <span asp-validation-for="RegDateOfBirth" class="text-danger"></span>
+                </div>
+                <br />
+
+                <div class="form-floating bg-dark col-7 mx-auto">
+                    <input asp-for="RegEmailAddress" class="form-control col-7" id="RegEmailAddress" />
+                    <label asp-for="RegEmailAddress" class="form-label text-dark">Email Address</label>
+                    <span asp-validation-for="RegEmailAddress" class="text-danger"></span>
+                </div>
+                <br />
+
+                <div class="form-floating bg-dark col-7 mx-auto">
+                    <input asp-for="RegPhoneNumber" class="form-control col-7" id="RegPhoneNumber" />
+                    <label asp-for="RegPhoneNumber" class="form-label text-dark">Phone Number</label>
+                    <span asp-validation-for="RegPhoneNumber" class="text-danger"></span>
+                </div>
+                <br />
+
+                <div class="form-floating bg-dark col-7 mx-auto">
+                    <select asp-for="RegCountry" class="form-control col-7" id="RegCountry">
+                        
+                    </select>
+                    <label asp-for="RegCountry" class="form-label text-dark">Country</label>
+                    <span asp-validation-for="RegCountry" class="text-danger"></span>
+                </div>
+                <br />
+
+                
+                <div class="form-floating bg-dark col-7 mx-auto">
+                    <select asp-for="RegState" class="form-control col-7" id="RegState" style="background-color:white;">
+                        
+                    </select>
+                    <label asp-for="RegState" class="form-label text-dark">State</label>
+                    <span asp-validation-for="RegState" class="text-danger"></span>
+                </div>
+                <br />
+
+                <div class="form-floating bg-dark col-7 mx-auto">
+                    <select asp-for="RegCity" class="form-control col-7" id="RegCity" style="background-color:white;">
+                       
+                    </select>
+                    <label asp-for="RegCity" class="form-label text-dark">City</label>
+                    <span asp-validation-for="RegCity" class="text-danger"></span>
+                </div>
+                <br />
+
+                <div class="form-floating bg-dark col-7 mx-auto">
+                    <div class="hobbies-container">
+                        <label class="form-label">Hobbies</label>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" name="RegHobbiesList" value="Reading"> Reading
+                            </label>
+                            <label>
+                                <input type="checkbox" name="RegHobbiesList" value="Singing"> Singing
+                            </label>
+                            <label>
+                                <input type="checkbox" name="RegHobbiesList" value="Travelling"> Travelling
+                            </label>
+                            <label>
+                                <input type="checkbox" name="RegHobbiesList" value="Music"> Music
+                            </label>
+                            <label>
+                                <input type="checkbox" name="RegHobbiesList" value="Sports"> Sports
+                            </label>
+                            <label>
+                                <input name="RegHobbiesList" />
+                            </label>
+                        </div>
+
+                    </div>
+                    <span asp-validation-for="RegHobbiesList" class="text-danger"></span>
+                </div>
+                <br />
+
+                 <div class="form-floating bg-dark col-7 mx-auto">
+                     <input asp-for="RegAvatar" type="file" class="form-control col-7" id="RegAvatar" />
+                     <label asp-for="RegAvatar" class="form-label text-dark">Upload Avatar</label>
+                     <span asp-validation-for="RegAvatar" class="text-danger"></span>
+                 </div>
+                <br />
+
+                <button type="submit" class="btn btn-light" style="background-color:navy; color:white;">Register</button>
+                <br />
+            </fieldset>
+        </form>
+    </div>
+</div>
+<div class="registration-controller>
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success text-center" style="margin-bottom: 10px;">
+            @TempData["Message"]
+        </div>
+    }
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("/Views/Shared/_ValidationScriptsPartial.cshtml")
+};

@@ -1,0 +1,16 @@
+﻿@model Project1ScopeIndia.Models.LoginModel
+
+<div class="text-center">
+    <div class="container bg-dark text-light p-4 rounded mx-auto" style="max-width: 400px;">
+        <h3 class="mb-3 text-center">OTP Verification</h3>
+
+        <form asp-action="OTPverification" asp-controller="WebHome" method="post">
+            <div class="mb-3">
+                <label for="otp" class="form-label">Enter Your otp</label>
+                <input id="otp" name="otp" class="form-control bg-light text-dark" required />
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+        </form>
+    </div>
+</div>

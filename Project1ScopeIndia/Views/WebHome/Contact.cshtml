@@ -1,0 +1,64 @@
+﻿
+@model Project1ScopeIndia.Models.ContactModel
+<div class="Contact-section text-center">
+    <h2>Contact Details</h2>
+    <p>Email:aiswaishhh@gmail.com</p>
+    <p>Phone:8592954818</p>
+</div>
+
+<div class="contact-form">
+    <div class="containers bg-body h-50 w-50 mx-auto rounded-start" style="color:black;">
+        <form asp-controller="WebHome" asp-action="Contact" method="post">
+            <fieldset>
+                <legend class="">
+                    <span class="bg-light"> To Contact Us</span>
+                </legend>
+                <div class="form-floating bg-dark col-7 mx-auto">
+                    <input asp-for="ContactName" class="form-control col-7 " id="ContactName" />
+                    <label asp-for="ContactName" class="form-label"> </label>
+                    <span asp-validation-for="ContactName" class="text-danger"></span>
+                </div>
+                <br />
+
+                <div class="form-floating bg-dark col-7 mx-auto">
+                    <input asp-for="ContactEmail" class="form-control col-7" id="ContactEmail" />
+                    <label asp-for="ContactEmail" class="form-label"></label>
+                    <span asp-validation-for="ContactEmail" class="text-danger"></span>
+                </div>
+                <br />
+
+                <div class="form-floating bg-dark col-7 mx-auto">
+                    <input asp-for="ContactSubject" class="form-control col-7" id="ContactSubject" />
+                    <label asp-for="ContactSubject" class="form-label"></label>
+                    <span asp-validation-for="ContactSubject" class="text-danger"></span>
+                </div>
+                <br />
+
+                <div class="form-floating bg-dark col-7 mx-auto">
+                    <input asp-for="ContactMessage" class="form-control col-7" id="ContactMessage" />
+                    <label asp-for="ContactMessage" class="form-label"></label>
+                    <span asp-validation-for="ContactMessage" class="text-danger"></span>
+                </div>
+                <br/>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-light" style="background-color:navy; color:white;">Send Email</button>
+                </div>
+                <br />
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+@if (!string.IsNullOrEmpty(ViewBag.Message))
+{
+    <div class="alert alert-success text-center" style="margin-bottom: 10px;">
+        @ViewBag.Message
+    </div>
+}
+
+@section Scripts {
+    @await Html.PartialAsync("/Views/Shared/_ValidationScriptsPartial.cshtml")
+}
+
+
